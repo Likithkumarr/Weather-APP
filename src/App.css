@@ -1,0 +1,140 @@
+/* 🌈 Animated background */
+body {
+  margin: 0;
+  height: 100vh;
+
+  display: flex;              /* ✅ center fix */
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #00c6ff, #0072ff, #6a11cb, #2575fc);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* 📱 App */
+.app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;        /* ✅ important */
+}
+
+/* 🧊 Glass Card */
+.card {
+  width: 320px;
+  max-width: 90%;
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  color: white;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+
+  animation: fadeIn 0.8s ease;
+}
+
+/* ✨ Title */
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  white-space: nowrap;        /* ✅ prevent breaking */
+}
+
+/* 🔍 Input */
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+/* 🔘 Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  margin-top: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+
+  background: linear-gradient(145deg, #ffffff, #dcdcdc);
+  transition: 0.2s;
+
+  white-space: nowrap;        /* ✅ prevent text break */
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* 📍 Location */
+.location-btn {
+  background: linear-gradient(145deg, #00ffcc, #00c6ff);
+  color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 🌦 Icon */
+.icon {
+  font-size: 70px;
+  margin: 10px 0;
+  animation: float 2s ease-in-out infinite;
+}
+
+/* 📊 Result */
+.result h1 {
+  font-size: 3rem;
+  margin: 5px 0;
+}
+
+/* ⏳ Loader */
+.loader {
+  border: 5px solid #fff;
+  border-top: 5px solid cyan;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 15px auto;
+  animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .card {
+    width: 90%;
+  }
+}
